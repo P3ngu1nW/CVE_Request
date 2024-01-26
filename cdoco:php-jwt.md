@@ -14,6 +14,6 @@ However, the function uses `strcmp` to compare the calculated signature with the
 
 https://github.com/GlitchedPolygons/l8w8jwt/blob/b24083d920c93a2f46f30d3d3d7a2663ac19ca09/src/decode.c#L488    
 
-![image-20240126152828348](cdoco:php-jwt/image-20240126152828348.png)
+![image-20240126152828348](https://github.com/P3ngu1nW/CVE_Request/blob/main/cdoco:php-jwt/image-20240126152828348.png?raw=true)
 
 This means that the more similar the prefix of the signature we provide to the actual calculated signature, the longer the comparison will take, which can lead to temporal side-channel attacks. An attacker can learn the correct signature and bypass verification.

@@ -4,13 +4,13 @@
 
 vendor: https://github.com/GlitchedPolygons/l8w8jwt
 
-version: 11
+version: 2.2.1
 
 ## 0x02 Vulnerability description
 
 The `l8w8jwt_decode` function of `decode.c` implements the function of comparing the HS256 algorithm signature.
 
-However, the function uses `memcmp` to compare the calculated signature with the JWT signature we provided, and strcmp is not a time-safe comparison function.
+However, the function uses `memcmp` to compare the calculated signature with the JWT signature we provided, and `memcmp` is not a time-safe comparison function.
 
 https://github.com/GlitchedPolygons/l8w8jwt/blob/b24083d920c93a2f46f30d3d3d7a2663ac19ca09/src/decode.c#L488C21-L488C27
 

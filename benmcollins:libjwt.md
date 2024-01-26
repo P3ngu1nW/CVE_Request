@@ -12,6 +12,8 @@ The `jwt_verify_sha_hmac` function of `jwt-wincrypt.c` implements the function o
 
 However, the function uses `strcmp` to compare the calculated signature with the JWT signature we provided, and strcmp is not a time-safe comparison function.
 
-![image-20240126142916673](benmcollins:libjwt/image-20240126142916673.png)
+https://github.com/benmcollins/libjwt/blob/323fb1c76f435b2d0d57f992ffa2a6cdc0d9f397/libjwt/jwt-wincrypt.c#L627
+
+![image-20240126142916673.png](benmcollins:libjwt/image-20240126142916673-6250984.png)
 
 This means that the more similar the prefix of the signature we provide to the actual calculated signature, the longer the comparison will take, which can lead to temporal side-channel attacks
